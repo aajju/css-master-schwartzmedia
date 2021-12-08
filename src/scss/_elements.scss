@@ -1,0 +1,17 @@
+%btn {
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 30px;
+  width: 40%;
+  text-align: center;
+  color: black;
+  border: 1px solid rgba($color: #000000, $alpha: 0.4);
+  border-radius: 99px;
+  font-weight: 700;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}

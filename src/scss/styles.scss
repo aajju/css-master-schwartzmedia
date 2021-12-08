@@ -8,6 +8,8 @@
 
 header {
   background-color: rosybrown;
+  position: sticky;
+  top: 0;
 }
 
 footer {
@@ -17,14 +19,49 @@ footer {
 .grid-main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr 0.8fr 0.2fr;
   width: 60%;
   margin: 0 auto;
-  background-color: gray;
+  // background-color: gray;
+
+  .grid-zigzag {
+    height: 100%;
+    // background-color: salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h5 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    font-size: 22px;
+    font-weight: 900;
+    // margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 28px;
+    margin: 30px 0;
+  }
+
+  div {
+    width: 100%;
+  }
+
+  .zigzag-cols:last-child {
+    border-bottom: 1px solid black;
+  }
 
   .zigzag-cols {
     display: flex;
     justify-content: space-around;
+    gap: 20px;
+    border-top: 1px solid black;
+
+    padding: 40px 0;
 
     .zigzag-text,
     .zigzag-img {
@@ -33,9 +70,75 @@ footer {
       // text-align: center;
     }
 
+    .zigzag-text {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
     &:nth-child(even) .zigzag-text {
       // background-color: black;
       order: 1;
     }
+  }
+
+  a:not(.a_image) {
+    @extend %btn;
+  }
+
+  .grid-below {
+    // margin-top: 50px;
+    // padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // background-color: salmon;
+    height: 100%;
+  }
+
+  .below-cols:first-child {
+    gap: 20px;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.4);
+  }
+
+  .below-cols:nth-child(3) {
+    gap: 20px;
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.4);
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.4);
+  }
+
+  .below-cols {
+    display: flex;
+    height: 100%;
+
+    .below-cols-row {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 50px 0;
+      // background-color: seagreen;
+
+      // height: 60vh;
+      // height: 100%;
+      // background-color: red;
+    }
+
+    .a_image {
+      width: 100%;
+      height: 150px;
+      display: block;
+    }
+  }
+
+  .below-cols:nth-child(2) {
+    flex-direction: column;
+    // margin: 100px 0;
+    justify-content: space-between;
+    height: 50%;
+    width: 50%;
+    padding: 40px 0;
+    // border-top: 1px solid rgba($color: #000000, $alpha: 0.4);
+    // border-bottom: 1px solid rgba($color: #000000, $alpha: 0.4);
   }
 }
